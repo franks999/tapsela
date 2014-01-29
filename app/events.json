@@ -1,0 +1,26 @@
+[
+	{
+		"act" : "Jon Cleary & the Absolute Monster Gentlemen",
+		"date" : "Monday, January 27",
+		"time" : "8:00pm",
+		"price" : "Free",
+		"blurb" : "Good band!",
+		"venue" : "The Maple Leaf",
+		"street" : "8316 Oak St",
+		"city" : "New Orleans LA 70118",
+		"phone" : "504-866-9359",
+		"area" : "Uptown"
+	},
+	{
+		"act" : "The Preservation Hall Jazz Masters featuring Leroy Jones",
+		"date" : "Monday, January 27",
+		"time" : "8:00pm",
+		"price" : "Free",
+		"blurb" : "Something about the band",
+		"venue" : "Preservation Hall",
+		"street" : "726 Saint Peters Street",
+		"city" : "New Orleans LA 70116",
+		"phone" : "504-522-2841",
+		"area" : "French Quarter"
+	}
+]

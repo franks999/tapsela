@@ -1,0 +1,15 @@
+/* app css stylesheet */
+
+body {
+  padding-top: 20px;
+  background-color:#e5e1d1;
+  color: #2c343b;
+}
+
+.events li {
+	list-style-type: none;
+	margin-top: 15px;
+	background-color:#ffffff;
+	padding: 5px 0 5px 5px;
+}
+

@@ -5,13 +5,10 @@
 var eventsApp = angular.module('eventsApp', []);
 
 eventsApp.controller('EventListCtrl', function($scope, $http) {
-  $http.get('app/events2.json').success(function(data) {
+  $http.get('app/js/events2.json').success(function(data) {
     $scope.events2 = data;
-  });
-  
+  });  
 });
-
-// just write a function that loads the feed directly 
 
 eventsApp.controller("Gambit", ['$scope','FeedService', function($scope, GamFeed) {      
 	GamFeed.parseFeed('http://www.bestofneworleans.com/gambit/Rss.xml?section=1222776').then(function(res){
@@ -23,14 +20,6 @@ eventsApp.controller("NewWWL", ['$scope','FeedService', function($scope, WWLFeed
 	WWLFeed.parseFeed('http://events.wwltv.com/default.aspx?ct=r&ename=rsseventspage').then(function(res){
 		$scope.wwl = res.data.responseData.feed.entries;
 	});
-}]);
-
-eventsApp.controller("JustGetCtrl", ['$scope','FeedService', function($scope, MyFeed) { 
-	$scope.loadWWL = function(e) {        
-		MyFeed.parseFeed($scope.feedSrc).then(function(res){
-			$scope.wwlevents = res.data.responseData.feed.entries;
-		});
-	};
 }]);
 
 eventsApp.controller("FeedCtrl", ['$scope','FeedService', function ($scope, Feed) {    

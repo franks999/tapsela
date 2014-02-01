@@ -33,7 +33,6 @@
 </div>  
  
 <div class="container-fluid">
-
 	<div ng-controller="Gambit">
 		 <div class="row-fluid">
 		 	<h2>Gambit Weekly Music Feed</h2>
@@ -58,22 +57,7 @@
                 </li>                
             </ul>            
         </div>
-	</div>
-	
-	<h2>Another Try</h2>	
-	<div ng-controller="JustGetCtrl">
-		 <div class="row-fluid">
-		 	<a href="#" ng-click="feedSrc='http://events.wwltv.com/default.aspx?ct=r&ename=rsseventspage';loadWWL($event);">WWL</a>
-            <ul class="events">
-                <li ng-repeat="feed in wwlevents">                    
-                    <h5><a target="_blank" href="{{feed.link}}">{{feed.title}}</a></h5>                                        
-                    <p class="text-left">{{feed.contentSnippet}}</p>                    
-                    <span class="small">{{feed.publishedDate}}</span>
-                </li>                
-            </ul>            
-        </div>
-	</div>
-	
+	</div>	
 </div>
 </body>
 </html>

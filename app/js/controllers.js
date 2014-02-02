@@ -5,8 +5,8 @@
 var eventsApp = angular.module('eventsApp', []);
 
 eventsApp.controller('EventListCtrl', function($scope, $http) {
-  $http.get('events2.json').success(function(data) {
-    $scope.events2 = data;
+  $http.get('events3.json').success(function(data) {
+    $scope.events3 = data;
   });  
 });
 

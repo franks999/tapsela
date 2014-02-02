@@ -20,10 +20,16 @@
     <div class="row-fluid">
       <div class="span12">
         Search: <input ng-model="query">
+        Neighborhood: 
+        <select ng-model="orderProp">
+        	<option value = "Frenchman">Frenchman St.</option>
+        	<option value = "French Qtr">Frenchman Qtr</option>
+        	<option value = "Northshore">Covington</option>
+        </select>
         <ul class="events">
-          <li ng-repeat="event in events2 | filter:query">
+          <li ng-repeat="event in events3 | filter:query | orderBy: orderProp">
             {{event.act}}
-            <p>{{event.venue}}</p>
+            <p>{{event.venue}}, {{event.hood}}</p>
             <p>{{event.fulldate}}</p>
           </li>
         </ul>

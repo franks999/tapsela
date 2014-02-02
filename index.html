@@ -19,15 +19,12 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span12">
-        Search: <input ng-model="query">
-        Neighborhood: 
-        <select ng-model="orderProp">
-        	<option value = "Frenchman">Frenchman St.</option>
-        	<option value = "French Qtr">Frenchman Qtr</option>
-        	<option value = "Northshore">Covington</option>
-        </select>
+        Search: <input ng-model="query">       
+        Neighborhood:
+      		<select ng-model="selectedItem" ng-options="i.hood for i in model" value="{{selectedItem.id}}">
+      		</select>		
         <ul class="events">
-          <li ng-repeat="event in events3 | filter:query | orderBy: orderProp">
+          <li ng-repeat="event in events2 | filter:selectedItem.hood | filter:query">
             {{event.act}}
             <p>{{event.venue}}, {{event.hood}}</p>
             <p>{{event.fulldate}}</p>

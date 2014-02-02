@@ -5,9 +5,48 @@
 var eventsApp = angular.module('eventsApp', []);
 
 eventsApp.controller('EventListCtrl', function($scope, $http) {
-  $http.get('events3.json').success(function(data) {
-    $scope.events3 = data;
-  });  
+  $http.get('events2.json').success(function(data) {
+    $scope.events2 = data;
+	$scope.filter = $scope.model[0];
+  });
+  $scope.model = [{
+		'id':'0',
+		'hood': 'Frenchman St'
+	},
+	{
+		'id':'1',
+		'hood': 'French Qtr'
+	},
+	{
+		'id':'2',
+		'hood': 'Marigny'
+	},
+	{
+		'id':'3',
+		'hood': 'CBD'
+	},
+	{
+		'id':'4',
+		'hood': 'Carrollton'
+	},
+	{
+		'id':'5',
+		'hood': 'Uptown'
+	},
+	{
+		'id':'6',
+		'hood': 'Garden District'
+	},
+	{
+		'id':'7',
+		'hood': 'City Park'
+	},
+		{
+		'id':'8',
+		'hood': 'Northshore'
+	}
+	];
+	$scope.selectedItem = $scope.model[0];  
 });
 
 eventsApp.controller("Gambit", ['$scope','FeedService', function($scope, GamFeed) {      

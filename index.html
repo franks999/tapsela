@@ -21,46 +21,18 @@
       <div class="span12">
         Search: <input ng-model="query">       
         Neighborhood:
-      		<select ng-model="selectedItem" ng-options="i.hood for i in model" value="{{selectedItem.id}}">
+      		<select ng-model="selectedItem" ng-options="i.dist for i in model" value="{{selectedItem.id}}">
       		</select>		
         <ul class="events">
-          <li ng-repeat="event in events2 | filter:selectedItem.hood | filter:query">
+          <li ng-repeat="event in events2 | filter:selectedItem.dist | filter:query">
             {{event.act}}
-            <p>{{event.venue}}, {{event.hood}}</p>
-            <p>{{event.fulldate}}</p>
+            <p>{{event.venue}}, {{event.dist}}</p>
+            <p>{{event.time}}</p>
           </li>
         </ul>
       </div>
     </div>
   </div>
-</div>  
- 
-<div class="container-fluid">
-	<div ng-controller="Gambit">
-		 <div class="row-fluid">
-		 	<h2>Gambit Weekly Music Feed</h2>
-            <ul class="events">
-                <li ng-repeat="feed in gambit">                    
-                    <h5><a target="_blank" href="{{feed.link}}">{{feed.title}}</a></h5>                                        
-                    <p class="text-left">{{feed.contentSnippet}}</p>                    
-                    <span class="small">{{feed.publishedDate}}</span>
-                </li>                
-            </ul>            
-        </div>
-	</div>
-
-	<div ng-controller="NewWWL">
-		<h2>WWL Events Feed</h2>
-		 <div class="row-fluid">
-            <ul class="events">
-                <li ng-repeat="feed in wwl">                    
-                    <h5><a target="_blank" href="{{feed.link}}">{{feed.title}}</a></h5>                                        
-                    <p class="text-left">{{feed.contentSnippet}}</p>                    
-                    <span class="small">{{feed.publishedDate}}</span>
-                </li>                
-            </ul>            
-        </div>
-	</div>	
-</div>
+</div> 
 </body>
 </html>

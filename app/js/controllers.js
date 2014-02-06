@@ -2,13 +2,10 @@
 
 /* Controllers */
 
-var eventsApp = angular.module('eventsApp', []);
+var eventsappControllers = angular.module('eventsappControllers', []);
 
-eventsApp.controller('EventListCtrl', function($scope, $http) {
-  $http.get('events2.json').success(function(data) {
-    $scope.events2 = data;
-	$scope.filter = $scope.model[0];
-  });
+eventsappControllers.controller('EventListCtrl', ['$scope', 'Events', function($scope, Events) {
+  $scope.events2 = Events.query();
   $scope.model = [{
 		'id':'0',
 		'dist': 'Frenchman St'
@@ -46,5 +43,6 @@ eventsApp.controller('EventListCtrl', function($scope, $http) {
 		'dist': 'Northshore'
 	}
 	];
-	$scope.selectedItem = $scope.model[0];  
-});
+	$scope.selectedItem = $scope.model[0];
+	$scope.filter = $scope.model[0];  
+}]);

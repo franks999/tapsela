@@ -1,0 +1,15 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			Search: <input ng-model="query">
+			Neighborhood:  <select ng-model="selectedItem" ng-options="i.dist for i in model" value="{{selectedItem.id}}"></select>		
+			<ul class="events">
+				<li ng-repeat="event in events2 | filter:selectedItem.dist | filter:query">
+					{{event.act}}
+					<p>{{event.venue}}, {{event.dist}}</p>
+					<p>{{event.time}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
